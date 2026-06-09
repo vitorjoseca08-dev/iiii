@@ -1,1 +1,320 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lux Essence</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:#faf8f4;
+    color:#222;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+header{
+    position:absolute;
+    width:100%;
+    z-index:100;
+    padding:30px 0;
+}
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    color:white;
+    font-size:2rem;
+    font-family:'Cormorant Garamond', serif;
+    font-weight:700;
+}
+
+.menu{
+    display:flex;
+    gap:30px;
+}
+
+.menu a{
+    color:white;
+    text-decoration:none;
+}
+
+.hero{
+    height:100vh;
+    background:
+    linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+    url('https://images.unsplash.com/photo-1523293182086-7651a899d37f');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    color:white;
+}
+
+.hero-content{
+    max-width:600px;
+}
+
+.hero h1{
+    font-family:'Cormorant Garamond', serif;
+    font-size:5rem;
+    line-height:1;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:1.1rem;
+    margin-bottom:30px;
+}
+
+.btn{
+    display:inline-block;
+    background:#c7a86f;
+    color:white;
+    padding:15px 35px;
+    text-decoration:none;
+    border-radius:50px;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#b39255;
+}
+
+.section{
+    padding:100px 0;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.section-title h2{
+    font-family:'Cormorant Garamond', serif;
+    font-size:3rem;
+}
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:white;
+    overflow:hidden;
+    border-radius:12px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.card img{
+    width:100%;
+    height:350px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:25px;
+}
+
+.card h3{
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#666;
+}
+
+.story{
+    background:#111;
+    color:white;
+}
+
+.story-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:center;
+}
+
+.story img{
+    width:100%;
+    border-radius:12px;
+}
+
+.story h2{
+    font-family:'Cormorant Garamond', serif;
+    font-size:3rem;
+    margin-bottom:20px;
+}
+
+.cta{
+    text-align:center;
+    background:#f3ede4;
+}
+
+.cta h2{
+    font-family:'Cormorant Garamond', serif;
+    font-size:3.5rem;
+    margin-bottom:20px;
+}
+
+footer{
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:40px;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+    font-size:3rem;
+}
+
+.story-grid{
+    grid-template-columns:1fr;
+}
+
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="container">
+<nav>
+<div class="logo">LUX ESSENCE</div>
+
+<div class="menu">
+<a href="#">Início</a>
+<a href="#">Coleção</a>
+<a href="#">Sobre</a>
+<a href="#">Contato</a>
+</div>
+</nav>
+</div>
+</header>
+
+<section class="hero">
+<div class="container">
+<div class="hero-content">
+
+<h1>Sinta a Elegância em Cada Detalhe</h1>
+
+<p>
+Fragrâncias e cosméticos premium criados para transformar
+momentos em experiências inesquecíveis.
+</p>
+
+<a href="#" class="btn">Descobrir Coleção</a>
+
+</div>
+</div>
+</section>
+
+<section class="section">
+
+<div class="container">
+
+<div class="section-title">
+<h2>Nossas Fragrâncias</h2>
+</div>
+
+<div class="products">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1541643600914-78b084683601">
+<div class="card-content">
+<h3>Golden Essence</h3>
+<p>Notas sofisticadas e envolventes para ocasiões especiais.</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1594035910387-fea47794261f">
+<div class="card-content">
+<h3>Royal Bloom</h3>
+<p>Uma combinação floral elegante e marcante.</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1615634260167-c8cdede054de">
+<div class="card-content">
+<h3>Black Signature</h3>
+<p>Personalidade forte com toque amadeirado premium.</p>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section story">
+
+<div class="container">
+
+<div class="story-grid">
+
+<img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1">
+
+<div>
+<h2>Nossa História</h2>
+
+<p>
+Inspirados pela beleza, criamos experiências sensoriais
+que despertam emoções e valorizam sua identidade.
+Cada fragrância conta uma história única.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section cta">
+
+<div class="container">
+
+<h2>Descubra Sua Nova Assinatura Olfativa</h2>
+
+<p style="margin-bottom:30px;">
+Encontre a fragrância perfeita para sua personalidade.
+</p>
+
+<a href="#" class="btn">Comprar Agora</a>
+
+</div>
+
+</section>
+
+<footer>
+© 2026 Lux Essence — Todos os direitos reservados.
+</footer>
+
+</body>
+</html>
