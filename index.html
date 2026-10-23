@@ -1,388 +1,734 @@
-<!DOCTYPE html>
 <html lang="pt-BR">
-<head> <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18145337366"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-18145337366');
-</script> 
-
-  <!-- Event snippet for Visualização de página (1) conversion page -->
-<script>
-  gtag('event', 'conversion', {
-      'send_to': 'AW-18145337366/6j5YCPbc7rscEJbAr8xD',
-      'value': 1.0,
-      'currency': 'BRL'
-  });
-</script>
-
-  <!-- Event snippet for Visualização de página (1) conversion page
-In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
-<script>
-function gtag_report_conversion(url) {
-  var callback = function () {
-    if (typeof(url) != 'undefined') {
-      window.location = url;
-    }
-  };
-  gtag('event', 'conversion', {
-      'send_to': 'AW-18145337366/6j5YCPbc7rscEJbAr8xD',
-      'value': 1.0,
-      'currency': 'BRL',
-      'event_callback': callback
-  });
-  return false;
-}
-</script>
-
-    
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Laboratório Sklean do Brasil LTDA</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
+<title>Sklean Informa — Publicação Informativa Independente | Cosméticos, Perfumaria &amp; Higiene Pessoal</title>
+<meta name="description" content="Sklean Informa: publicação digital de caráter exclusivamente informativo sobre cosméticos, perfumaria e higiene pessoal. Projeto editorial independente mantido por Laboratorio Sklean do Brasil LTDA · CNPJ 62.635.669/0001-07. Sem vendas, sem preços.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#F6F1E8">
+<link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect x="1.5" y="1.5" width="29" height="29" rx="15" fill="none" stroke="%23A5854A" stroke-width="2"/><path d="M10 22c6 0 12-6 12-12-6 0-12 6-12 12z" fill="none" stroke="%231E3A2C" stroke-width="2"/><path d="M12 20l8-8" stroke="%231E3A2C" stroke-width="1.6"/><circle cx="24.5" cy="24.5" r="3" fill="%23A5854A"/></svg>'>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="htt...ap" rel="stylesheet">
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+:root{
+  --bg:#F6F1E8;
+  --bg-2:#EFE8DA;
+  --card:#FFFFFF;
+  --ink:#15211B;
+  --green:#1E3A2C;
+  --green-soft:#2C4A3A;
+  --brass:#A5854A;
+  --brass-deep:#8C6F39;
+  --line:rgba(30,58,44,.16);
+  --line-accent:rgba(165,133,74,.45);
+  --txt:#1B2820;
+  --txt-2:#5A6659;
+  --txt-3:#8B8F7E;
+  --serif:"Cormorant Garamond",Georgia,serif;
+  --sans:"Jost",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",monospace;
+  --gutter:clamp(20px,5vw,72px);
 }
-
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:auto}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
 body{
-    background:#fafafa;
-    color:#333;
+  background:var(--bg);
+  color:var(--txt);
+  font-family:var(--sans);
+  font-weight:300;
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
 }
-
+::selection{background:var(--green);color:#F6F1E8}
+::-webkit-scrollbar{width:10px}
+::-webkit-scrollbar-track{background:var(--bg-2)}
+::-webkit-scrollbar-thumb{background:#C9BFA8;border-radius:5px}
+::-webkit-scrollbar-thumb:hover{background:var(--brass)}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.noise{
+  position:fixed;inset:0;z-index:120;pointer-events:none;opacity:.035;
+  background-image:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2"/></filter><rect width="200" height="200" filter="url(%23n)" opacity="0.6"/></svg>');
+}
+/* ---------- Intro ---------- */
+.intro{position:fixed;inset:0;z-index:200;background:#15211B;display:flex;align-items:center;justify-content:center}
+.intro-mark{width:clamp(72px,10vw,116px)}
+.intro-mark circle,.intro-mark path{stroke-dasharray:260;stroke-dashoffset:260}
+.intro-tag{position:absolute;bottom:8vh;font-family:var(--mono);font-size:11px;letter-spacing:.35em;color:#7E8A7C;text-transform:uppercase}
+/* ---------- Strip (topo com privacidade) ---------- */
+.strip{
+  position:relative;z-index:60;
+  display:flex;align-items:center;justify-content:center;gap:16px;
+  padding:10px var(--gutter);
+  background:var(--green);
+  border-bottom:1px solid rgba(246,241,232,.14);
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#D9D4C3;
+  text-align:center;flex-wrap:wrap;
+}
+.strip .dot{width:5px;height:5px;background:var(--brass);border-radius:50%;flex:none}
+.strip a{
+  color:#F6F1E8;background:var(--brass);padding:5px 14px;
+  font-weight:700;letter-spacing:.16em;transition:background .3s;
+}
+.strip a:hover{background:var(--brass-deep)}
+/* ---------- Header ---------- */
 header{
-    background:linear-gradient(135deg,#1f2937,#111827);
-    color:white;
-    padding:20px 8%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+  position:sticky;top:0;z-index:50;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:18px var(--gutter);
+  background:rgba(246,241,232,.82);
+  backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--line);
+  transition:padding .4s ease;
 }
-
-.logo{
-    font-size:28px;
-    font-weight:700;
-}
-
+header.scrolled{padding:12px var(--gutter)}
+.brand{display:flex;align-items:center;gap:14px}
+.brand svg{width:40px;height:40px;flex:none}
+.brand-name{display:flex;flex-direction:column;line-height:1.15}
+.brand-name b{font-family:var(--serif);font-size:19px;font-weight:700;letter-spacing:.04em}
+.brand-name span{font-family:var(--mono);font-size:9px;letter-spacing:.28em;color:var(--brass-deep);text-transform:uppercase}
+nav{display:flex;align-items:center;gap:30px}
 nav a{
-    color:white;
-    text-decoration:none;
-    margin-left:25px;
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--txt-2);
+  position:relative;padding:4px 0;transition:color .3s;
 }
-
+nav a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--brass);transition:width .35s cubic-bezier(.65,0,.35,1)}
+nav a:hover{color:var(--green)}
+nav a:hover::after{width:100%}
+nav a.nav-priv{color:var(--brass-deep);font-weight:700}
+@media(max-width:960px){nav{display:none}}
+/* ---------- Hero ---------- */
 .hero{
-    min-height:85vh;
-    background:
-    linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
-    url('https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=1600&q=80');
-    background-size:cover;
-    background-position:center;
-    display:flex;
-    align-items:center;
-    color:white;
-    padding:0 8%;
+  position:relative;min-height:92vh;
+  display:flex;flex-direction:column;justify-content:center;
+  padding:clamp(60px,9vh,110px) var(--gutter);
+  overflow:hidden;
 }
-
-.hero-content{
-    max-width:700px;
+.hero::before{
+  content:"";position:absolute;inset:0;z-index:0;
+  background:
+    radial-gradient(ellipse 46% 42% at 85% 20%,rgba(165,133,74,.14),transparent 62%),
+    radial-gradient(ellipse 40% 38% at 6% 86%,rgba(30,58,44,.10),transparent 60%);
 }
-
-.hero h1{
-    font-size:58px;
-    line-height:1.1;
-    margin-bottom:20px;
+.hero-leaf{position:absolute;z-index:1;pointer-events:none;opacity:.5}
+.hero-leaf.one{top:10%;right:-40px;width:clamp(220px,26vw,420px);transform:rotate(14deg)}
+.hero-leaf.two{bottom:4%;left:-70px;width:clamp(180px,20vw,330px);transform:rotate(-160deg);opacity:.32}
+.hero-inner{position:relative;z-index:2;max-width:1400px;width:100%;margin:0 auto}
+.hero-kicker{
+  display:inline-flex;align-items:center;gap:12px;margin-bottom:32px;
+  font-family:var(--mono);font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--brass-deep);
 }
-
-.hero p{
-    font-size:20px;
-    margin-bottom:30px;
+.hero-kicker::before{content:"";width:44px;height:1px;background:var(--brass)}
+h1{
+  font-family:var(--serif);font-weight:600;
+  font-size:clamp(2.7rem,6.8vw,6rem);
+  line-height:1.04;letter-spacing:-.01em;color:var(--green);
 }
-
+.hl-line{display:block;overflow:hidden;padding-bottom:.09em;margin-bottom:-.09em}
+.hl-inner{display:block;transform:translateY(112%)}
+h1 em{font-style:italic;color:var(--brass);font-weight:500}
+.hero-sub{max-width:580px;margin-top:32px;color:var(--txt-2);font-size:clamp(.98rem,1.25vw,1.1rem)}
+.hero-ctas{display:flex;gap:16px;margin-top:38px;flex-wrap:wrap}
 .btn{
-    display:inline-block;
-    background:#d4af37;
-    color:white;
-    text-decoration:none;
-    padding:15px 35px;
-    border-radius:50px;
-    font-weight:600;
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+  padding:16px 30px;cursor:pointer;transition:transform .35s cubic-bezier(.22,1,.36,1),background .3s,border-color .3s,color .3s;
 }
-
-section{
-    padding:90px 8%;
+.btn-solid{background:var(--green);color:#F6F1E8;border:1px solid var(--green)}
+.btn-solid:hover{background:var(--green-soft);transform:translateY(-3px)}
+.btn-ghost{background:transparent;color:var(--green);border:1px solid var(--line-accent)}
+.btn-ghost:hover{border-color:var(--brass);color:var(--brass-deep);transform:translateY(-3px)}
+.hero-badges{display:flex;flex-wrap:wrap;margin-top:50px;border-top:1px solid var(--line)}
+.hero-badges div{
+  padding:16px 32px 0 0;margin-right:32px;
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--txt-3);
 }
-
-.section-title{
-    text-align:center;
-    font-size:40px;
-    margin-bottom:50px;
+.hero-badges b{display:block;color:var(--green);font-size:12px;margin-top:5px;font-weight:500}
+/* ---------- Marquee ---------- */
+.marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;padding:20px 0;background:var(--bg-2)}
+.marquee-track{display:flex;width:max-content;animation:mq 65s linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.marquee-track span{
+  font-family:var(--serif);font-style:italic;font-weight:500;
+  font-size:clamp(1.15rem,2vw,1.65rem);color:var(--txt-3);white-space:nowrap;padding-right:.6em;
 }
-
-.cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:25px;
+.marquee-track span b{color:var(--brass-deep);font-weight:600;font-style:normal;font-family:var(--sans);font-size:.7em;letter-spacing:.28em;vertical-align:.2em}
+@keyframes mq{to{transform:translateX(-50%)}}
+/* ---------- Sections ---------- */
+section{padding:clamp(80px,12vh,150px) var(--gutter)}
+.wrap{max-width:1400px;margin:0 auto}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:32px;margin-bottom:clamp(40px,6vh,72px);flex-wrap:wrap}
+.sec-label{font-family:var(--mono);font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--brass-deep);display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.sec-label::before{content:"";width:30px;height:1px;background:var(--brass)}
+h2{font-family:var(--serif);font-weight:600;font-size:clamp(2rem,4vw,3.3rem);line-height:1.08;letter-spacing:-.01em;color:var(--green);max-width:680px}
+h2 em{font-style:italic;color:var(--brass)}
+.sec-note{max-width:340px;color:var(--txt-2);font-size:.92rem}
+/* ---------- Serviços ---------- */
+.servicos-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.svc-card{
+  border:1px solid var(--line);background:var(--card);
+  padding:clamp(26px,2.4vw,38px);position:relative;overflow:hidden;
+  box-shadow:0 14px 40px -24px rgba(30,58,44,.22);
+  transition:border-color .4s,transform .5s cubic-bezier(.22,1,.36,1),box-shadow .5s;
 }
-
-.card{
-    background:white;
-    padding:30px;
-    border-radius:18px;
-    box-shadow:0 10px 30px rgba(0,0,0,.08);
+.svc-card:hover{border-color:var(--line-accent);transform:translateY(-6px);box-shadow:0 24px 50px -26px rgba(30,58,44,.3)}
+.svc-card::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--brass),var(--green));
+  transform:scaleX(0);transform-origin:left;transition:transform .5s cubic-bezier(.22,1,.36,1);
 }
-
-.card h3{
-    margin-bottom:15px;
+.svc-card:hover::before{transform:scaleX(1)}
+.svc-num{font-family:var(--mono);font-size:11px;letter-spacing:.24em;color:var(--txt-3);margin-bottom:22px;display:flex;align-items:center;gap:12px}
+.svc-num::after{content:"";flex:1;height:1px;background:var(--line)}
+.svc-card h3{font-family:var(--serif);font-weight:600;font-size:clamp(1.3rem,1.8vw,1.6rem);margin-bottom:12px;color:var(--green)}
+.svc-card p{color:var(--txt-2);font-size:.9rem}
+.svc-card ul{list-style:none;margin-top:18px;border-top:1px solid var(--line);padding-top:14px}
+.svc-card li{color:var(--txt-2);font-size:.86rem;padding:5px 0 5px 22px;position:relative}
+.svc-card li::before{content:"";position:absolute;left:0;top:13px;width:10px;height:2px;background:var(--brass)}
+.note-bar{
+  margin-top:26px;border:1px solid var(--line-accent);background:rgba(165,133,74,.08);
+  padding:18px 26px;text-align:center;
+  font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--brass-deep);
 }
-
-.about{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:50px;
-    align-items:center;
+@media(max-width:1100px){.servicos-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.servicos-grid{grid-template-columns:1fr}}
+/* ---------- Equipe ---------- */
+.equipe{background:var(--green);color:#EDE8DA;position:relative;overflow:hidden}
+.equipe::before{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(ellipse 50% 45% at 88% 12%,rgba(165,133,74,.16),transparent 60%);
 }
-
-.about img{
-    width:100%;
-    border-radius:20px;
+.equipe .sec-label{color:var(--brass)}
+.equipe h2{color:#F6F1E8}
+.equipe h2 em{color:var(--brass)}
+.equipe .sec-note{color:#B9C2B2}
+.equipe-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;position:relative;z-index:2}
+.team-card{
+  border:1px solid rgba(246,241,232,.16);background:rgba(246,241,232,.04);
+  padding:clamp(26px,2.4vw,38px);
+  backdrop-filter:blur(6px);
+  transition:border-color .4s,transform .5s cubic-bezier(.22,1,.36,1),background .4s;
 }
-
-.info-box{
-    background:white;
-    padding:40px;
-    border-radius:20px;
-    box-shadow:0 10px 30px rgba(0,0,0,.08);
+.team-card:hover{border-color:var(--brass);transform:translateY(-6px);background:rgba(246,241,232,.07)}
+.team-num{font-family:var(--mono);font-size:11px;letter-spacing:.24em;color:#8FA08E;margin-bottom:22px;display:flex;align-items:center;gap:12px}
+.team-num::after{content:"";flex:1;height:1px;background:rgba(246,241,232,.16)}
+.team-card h3{font-family:var(--serif);font-weight:600;font-size:clamp(1.3rem,1.8vw,1.6rem);margin-bottom:12px;color:#F6F1E8}
+.team-card p{color:#B9C2B2;font-size:.9rem}
+.team-card ul{list-style:none;margin-top:18px;border-top:1px solid rgba(246,241,232,.16);padding-top:14px}
+.team-card li{color:#D9D4C3;font-size:.86rem;padding:5px 0 5px 22px;position:relative}
+.team-card li::before{content:"";position:absolute;left:0;top:13px;width:10px;height:2px;background:var(--brass)}
+.praise-band{
+  position:relative;z-index:2;margin-top:26px;border:1px solid rgba(165,133,74,.5);
+  background:rgba(165,133,74,.1);padding:clamp(26px,3vw,40px);
 }
-
-.info-box p{
-    margin-bottom:12px;
+.praise-band p{
+  font-family:var(--serif);font-style:italic;font-weight:500;
+  font-size:clamp(1.2rem,2vw,1.65rem);line-height:1.45;color:#F6F1E8;max-width:900px;
 }
-
-.contact{
-    background:#111827;
-    color:white;
-    text-align:center;
+.praise-band small{
+  display:block;margin-top:16px;font-family:var(--mono);font-size:10.5px;
+  letter-spacing:.24em;text-transform:uppercase;color:var(--brass);
 }
-
-.contact h2{
-    margin-bottom:20px;
+@media(max-width:920px){.equipe-grid{grid-template-columns:1fr}}
+/* ---------- Transparência ---------- */
+.transp-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(40px,5vw,72px);align-items:start}
+.transp-text p{color:var(--txt-2);margin-bottom:20px;font-size:clamp(.95rem,1.12vw,1.04rem)}
+.transp-text p b{color:var(--green);font-weight:500}
+.aviso{
+  border:1px solid var(--line-accent);background:rgba(165,133,74,.08);
+  padding:clamp(24px,3vw,36px);position:relative;margin-top:8px;
 }
-
-.contact p{
-    margin-bottom:10px;
+.aviso::before{
+  content:"AVISO IMPORTANTE";position:absolute;top:-11px;left:24px;
+  background:var(--brass);color:#F6F1E8;font-family:var(--mono);font-size:9.5px;font-weight:700;
+  letter-spacing:.22em;padding:4px 14px;
 }
-
-footer{
-    background:#0b0f18;
-    color:#aaa;
-    text-align:center;
-    padding:25px;
+.aviso p{color:#3A453C;font-size:.92rem;margin-bottom:12px}
+.aviso p:last-child{margin-bottom:0}
+.aviso .cnpj-line{font-family:var(--mono);font-size:.84rem;color:var(--brass-deep);letter-spacing:.04em}
+.matrix{
+  display:grid;grid-template-columns:1fr 1fr;
+  border-top:1px solid var(--line);border-left:1px solid var(--line);background:var(--card);
+  box-shadow:0 18px 44px -28px rgba(30,58,44,.25);
 }
-
-@media(max-width:900px){
-
-.hero h1{
-    font-size:40px;
+.cell{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:clamp(18px,1.8vw,26px);transition:background .35s}
+.cell:hover{background:rgba(165,133,74,.06)}
+.cell label{font-family:var(--mono);font-size:9px;letter-spacing:.24em;text-transform:uppercase;color:var(--txt-3);display:block;margin-bottom:8px}
+.cell span{font-size:.95rem;font-weight:400;color:var(--txt)}
+.cell span.mono{font-family:var(--mono);font-size:.84rem;letter-spacing:.03em}
+.cell.wide{grid-column:span 2}
+.cell .ok{color:#2F7A4D;display:inline-flex;align-items:center;gap:8px;font-weight:500}
+.cell .ok::before{content:"";width:7px;height:7px;border-radius:50%;background:#2F7A4D}
+@media(max-width:960px){.transp-grid{grid-template-columns:1fr}}
+@media(max-width:540px){.matrix{grid-template-columns:1fr}.cell.wide{grid-column:span 1}}
+/* ---------- Contato ---------- */
+.contato{background:var(--bg-2);border-top:1px solid var(--line)}
+.contato-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.panel{border:1px solid var(--line);background:var(--card);padding:clamp(26px,2.6vw,40px);display:flex;flex-direction:column;gap:10px;box-shadow:0 14px 40px -26px rgba(30,58,44,.22);transition:border-color .4s,transform .5s cubic-bezier(.22,1,.36,1)}
+.panel:hover{border-color:var(--line-accent);transform:translateY(-6px)}
+.panel label{font-family:var(--mono);font-size:9.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--txt-3)}
+.panel h3{font-family:var(--serif);font-weight:600;font-size:clamp(1.25rem,1.8vw,1.55rem);color:var(--green)}
+.panel p{color:var(--txt-2);font-size:.92rem}
+.panel a.clink{font-family:var(--serif);font-weight:600;font-size:clamp(1.1rem,1.6vw,1.4rem);color:var(--green);transition:color .3s}
+.panel a.clink:hover{color:var(--brass-deep)}
+.panel .hint{margin-top:auto;padding-top:18px;font-size:.8rem;color:var(--txt-3)}
+@media(max-width:920px){.contato-grid{grid-template-columns:1fr}}
+/* ---------- Footer ---------- */
+footer{border-top:1px solid var(--line);padding:clamp(48px,7vh,80px) var(--gutter) 40px;background:var(--green);color:#EDE8DA}
+.foot-grid{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:48px}
+.foot-grid h4{font-family:var(--mono);font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--brass);margin-bottom:20px;font-weight:700}
+.foot-grid a{display:block;color:#B9C2B2;font-size:.9rem;padding:5px 0;transition:color .3s,transform .3s}
+.foot-grid a:hover{color:var(--brass);transform:translateX(6px)}
+.foot-brand p{color:#8FA08E;font-size:.84rem;max-width:440px;margin-top:16px}
+.foot-brand .brand-name b{color:#F6F1E8}
+.foot-legal{
+  max-width:1400px;margin:56px auto 0;padding-top:26px;border-top:1px solid rgba(246,241,232,.16);
+  display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
+  font-family:var(--mono);font-size:10px;letter-spacing:.12em;color:#8FA08E;text-transform:uppercase;
 }
-
-.about{
-    grid-template-columns:1fr;
+@media(max-width:820px){.foot-grid{grid-template-columns:1fr}}
+/* ---------- Overlay (Privacidade) ---------- */
+.overlay{
+  position:fixed;inset:0;z-index:150;background:var(--bg);
+  overflow-y:auto;padding:clamp(90px,12vh,140px) var(--gutter) 100px;
+  opacity:0;visibility:hidden;transition:opacity .45s ease,visibility .45s;
 }
-
+.overlay.open{opacity:1;visibility:visible}
+.overlay-inner{max-width:820px;margin:0 auto}
+.overlay .sec-label{margin-bottom:26px}
+.overlay h2{margin-bottom:36px}
+.overlay h5{font-family:var(--sans);font-weight:600;font-size:1.02rem;margin:34px 0 10px;color:var(--green)}
+.overlay p,.overlay li{color:var(--txt-2);font-size:.95rem}
+.overlay ul{padding-left:22px;margin-top:8px}
+.overlay-close{
+  position:fixed;top:26px;right:var(--gutter);z-index:160;
+  font-family:var(--mono);font-size:11px;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--green);background:var(--card);border:1px solid var(--line);padding:12px 22px;cursor:pointer;
+  transition:border-color .3s,color .3s;
 }
+.overlay-close:hover{border-color:var(--brass);color:var(--brass-deep)}
+/* reveal */
+[data-reveal]{opacity:0}
+.no-js [data-reveal],.no-anim [data-reveal]{opacity:1}
+.no-js .hl-inner,.no-anim .hl-inner{transform:none}
+.no-js .intro{display:none}
 </style>
 </head>
 <body>
+<script>document.body.classList.add('js')</script>
+<div class="noise" aria-hidden="true"></div>
 
-<header>
-    <div class="logo">SKLEAN</div>
+<div class="intro" id="intro" aria-hidden="true">
+  <svg class="intro-mark" viewBox="0 0 32 32" fill="none">
+    <circle cx="16" cy="16" r="14.5" stroke="#A5854A" stroke-width="1.4"/>
+    <path d="M10 22c6 0 12-6 12-12-6 0-12 6-12 12z" stroke="#F6F1E8" stroke-width="1.6"/>
+    <path d="M12 20l8-8" stroke="#F6F1E8" stroke-width="1.2"/>
+    <circle cx="24.5" cy="24.5" r="3" fill="#A5854A" stroke="none"/>
+  </svg>
+  <span class="intro-tag">Sklean Informa</span>
+</div>
 
-    <nav>
-        <a href="#empresa">Empresa</a>
-        <a href="#atividades">Atividades</a>
-        <a href="#contato">Contato</a>
-    </nav>
+<div class="strip" data-testid="transparency-strip">
+  <span class="dot"></span>
+  <span>Publicação informativa e independente · Mantida por Laboratorio Sklean do Brasil LTDA · CNPJ 62.635.669/0001-07</span>
+  <a href="#/privacidade" data-testid="top-privacy-btn">Política de Privacidade</a>
+  <span class="dot"></span>
+</div>
+
+<header id="header">
+  <a href="#topo" class="brand" data-testid="brand-logo" aria-label="Sklean Informa — início">
+    <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+      <circle cx="16" cy="16" r="14.5" stroke="#A5854A" stroke-width="1.6"/>
+      <path d="M10 22c6 0 12-6 12-12-6 0-12 6-12 12z" stroke="#1E3A2C" stroke-width="1.8"/>
+      <path d="M12 20l8-8" stroke="#1E3A2C" stroke-width="1.3"/>
+      <circle cx="24.5" cy="24.5" r="3" fill="#A5854A"/>
+    </svg>
+    <span class="brand-name">
+      <b>SKLEAN INFORMA</b>
+      <span>Publicação independente</span>
+    </span>
+  </a>
+  <nav data-testid="main-nav">
+    <a href="#servicos" data-testid="nav-servicos">Serviços</a>
+    <a href="#equipe" data-testid="nav-equipe">Equipe</a>
+    <a href="#transparencia" data-testid="nav-transparencia">Transparência</a>
+    <a href="#contato" data-testid="nav-contato">Contato</a>
+    <a href="#/privacidade" class="nav-priv" data-testid="nav-privacidade">Privacidade</a>
+  </nav>
 </header>
 
-<section class="hero">
-
-    <div class="hero-content">
-
-        <h1>Laboratório Sklean do Brasil LTDA</h1>
-
-        <p>
-            Mais de três décadas de atuação no segmento de cosméticos,
-            perfumaria e higiene pessoal.
-        </p>
-
-        <a href="#empresa" class="btn">
-            Conheça a Empresa
-        </a>
-
+<main id="topo">
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <svg class="hero-leaf one" viewBox="0 0 200 260" fill="none" aria-hidden="true">
+      <path d="M100 250C100 150 40 110 20 20c110 20 150 80 150 160 0 40-30 70-70 70z" stroke="#1E3A2C" stroke-width="1.2"/>
+      <path d="M100 250C100 170 70 120 20 20" stroke="#1E3A2C" stroke-width=".8"/>
+      <path d="M96 210c-20-8-36-10-56-34M99 168c-16-14-24-26-34-56M108 128c-6-20-6-34-2-58" stroke="#1E3A2C" stroke-width=".7"/>
+    </svg>
+    <svg class="hero-leaf two" viewBox="0 0 200 260" fill="none" aria-hidden="true">
+      <path d="M100 250C100 150 40 110 20 20c110 20 150 80 150 160 0 40-30 70-70 70z" stroke="#A5854A" stroke-width="1.2"/>
+      <path d="M100 250C100 170 70 120 20 20" stroke="#A5854A" stroke-width=".8"/>
+    </svg>
+    <div class="hero-inner">
+      <p class="hero-kicker">Portal informativo · Cosméticos, perfumaria &amp; higiene pessoal</p>
+      <h1 data-testid="hero-title">
+        <span class="hl-line"><span class="hl-inner">Informação clara,</span></span>
+        <span class="hl-line"><span class="hl-inner">beleza com</span></span>
+        <span class="hl-line"><span class="hl-inner"><em>responsabilidade.</em></span></span>
+      </h1>
+      <p class="hero-sub" data-reveal>
+        O Sklean Informa é uma publicação digital de caráter exclusivamente informativo
+        sobre o universo de cosméticos, perfumaria e higiene pessoal. Um projeto editorial
+        independente — sem vendas, sem preços e sem catálogo — mantido com transparência
+        e carinho por uma equipe que trabalha bem todos os dias.
+      </p>
+      <div class="hero-ctas" data-reveal>
+        <a href="#servicos" class="btn btn-solid" data-testid="cta-servicos">Conheça os Serviços ↓</a>
+        <a href="#/privacidade" class="btn btn-ghost" data-testid="cta-privacidade">Política de Privacidade</a>
+      </div>
+      <div class="hero-badges" data-reveal>
+        <div>Natureza<b>Publicação informativa</b></div>
+        <div>Venda online<b>Não realizamos</b></div>
+        <div>Projeto<b>Independente</b></div>
+        <div>Mantenedor<b>CNPJ 62.635.669/0001-07</b></div>
+      </div>
     </div>
+  </section>
 
-</section>
-
-<section id="empresa">
-
-    <h2 class="section-title">Sobre a Empresa</h2>
-
-    <div class="about">
-
-        <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1000&q=80">
-
-        <div class="info-box">
-
-            <p><strong>Razão Social:</strong> Laboratório Sklean do Brasil LTDA</p>
-
-            <p><strong>CNPJ:</strong> 62.635.669/0001-07</p>
-
-            <p><strong>Fundação:</strong> 29/03/1990</p>
-
-            <p><strong>Situação:</strong> Ativa</p>
-
-            <p><strong>Natureza Jurídica:</strong> Sociedade Empresária Limitada</p>
-
-            <p><strong>Capital Social:</strong> R$ 5.648.199,00</p>
-
-            <p><strong>Tipo:</strong> Matriz</p>
-
-        </div>
-
+  <!-- MARQUEE -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Cosméticos <b>·</b> Perfumaria <b>·</b> Higiene Pessoal <b>·</b> Informação <b>·</b> Transparência <b>·</b> Sklean Informa <b>·</b>&nbsp;</span>
+      <span>Cosméticos <b>·</b> Perfumaria <b>·</b> Higiene Pessoal <b>·</b> Informação <b>·</b> Transparência <b>·</b> Sklean Informa <b>·</b>&nbsp;</span>
     </div>
+  </div>
 
-</section>
-
-<section id="atividades">
-
-    <h2 class="section-title">Áreas de Atuação</h2>
-
-    <div class="cards">
-
-        <div class="card">
-            <h3>Cosméticos</h3>
-            <p>
-                Fabricação e comercialização de cosméticos,
-                perfumaria e higiene pessoal.
-            </p>
+  <!-- SERVIÇOS -->
+  <section id="servicos">
+    <div class="wrap">
+      <div class="sec-head" data-reveal>
+        <div>
+          <p class="sec-label">O que você encontra aqui</p>
+          <h2>Os principais <em>serviços</em> desta publicação</h2>
         </div>
-
-        <div class="card">
-            <h3>Perfumaria</h3>
-            <p>
-                Desenvolvimento de produtos para cuidados
-                pessoais e bem-estar.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>Atacado</h3>
-            <p>
-                Comércio atacadista de cosméticos e
-                produtos de perfumaria.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>Varejo</h3>
-            <p>
-                Comercialização de cosméticos, higiene
-                pessoal e produtos diversos.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>Consultoria</h3>
-            <p>
-                Atividades de consultoria em gestão empresarial.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>Licenciamento</h3>
-            <p>
-                Gestão de ativos intangíveis não financeiros.
-            </p>
-        </div>
-
+        <p class="sec-note">Serviços editoriais gratuitos, produzidos para informar — nunca para vender.</p>
+      </div>
+      <div class="servicos-grid">
+        <article class="svc-card" data-reveal data-testid="svc-guias">
+          <p class="svc-num">SERVIÇO 01</p>
+          <h3>Guias &amp; Análises</h3>
+          <p>Artigos explicativos sobre categorias de cosméticos, perfumaria e higiene pessoal, escritos em linguagem simples.</p>
+          <ul>
+            <li>Conteúdo claro e acessível</li>
+            <li>Revisão editorial constante</li>
+          </ul>
+        </article>
+        <article class="svc-card" data-reveal data-testid="svc-glossario">
+          <p class="svc-num">SERVIÇO 02</p>
+          <h3>Glossário de Ingredientes</h3>
+          <p>Explicações didáticas sobre ingredientes comuns de rótulos, para você entender o que lê na embalagem.</p>
+          <ul>
+            <li>Termos traduzidos sem tecnicismo</li>
+            <li>Consulta gratuita e ilimitada</li>
+          </ul>
+        </article>
+        <article class="svc-card" data-reveal data-testid="svc-normas">
+          <p class="svc-num">SERVIÇO 03</p>
+          <h3>Normas &amp; Regulamentação</h3>
+          <p>Resumos informativos sobre regras do setor, como diretrizes da ANVISA, sempre com foco educacional.</p>
+          <ul>
+            <li>Informação regulatória simplificada</li>
+            <li>Fontes oficiais citadas</li>
+          </ul>
+        </article>
+        <article class="svc-card" data-reveal data-testid="svc-tendencias">
+          <p class="svc-num">SERVIÇO 04</p>
+          <h3>Tendências &amp; Novidades</h3>
+          <p>Panoramas editoriais sobre o mercado de beleza e bem-estar, sem promoção de marcas ou produtos.</p>
+          <ul>
+            <li>Curadoria independente</li>
+            <li>Sem publieditorial oculto</li>
+          </ul>
+        </article>
+      </div>
+      <div class="note-bar" data-reveal data-testid="servicos-note">
+        Publicação mantida por Laboratorio Sklean do Brasil LTDA · CNPJ 62.635.669/0001-07 · Conteúdo exclusivamente informativo
+      </div>
     </div>
+  </section>
 
-</section>
-
-<section>
-
-    <h2 class="section-title">Informações Corporativas</h2>
-
-    <div class="cards">
-
-        <div class="card">
-            <h3>Administração</h3>
-
-            <p>Brian Zigowski Drummond</p>
-            <p>Jaime Teixeira Drummond</p>
-            <p>Abrike Serviços e Licenciamentos LTDA</p>
+  <!-- EQUIPE -->
+  <section class="equipe" id="equipe">
+    <div class="wrap" style="position:relative;z-index:2">
+      <div class="sec-head" data-reveal>
+        <div>
+          <p class="sec-label">Nossa equipe</p>
+          <h2>Uma equipe que <em>trabalha bem</em>, todos os dias</h2>
         </div>
-
-        <div class="card">
-            <h3>Localização</h3>
-
-            <p>
-                Avenida Lourenço Belloli, 1010
-                Anexo 1000
-            </p>
-
-            <p>
-                Vila Menck
-                Osasco - SP
-                CEP 06268-110
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>Registro</h3>
-
-            <p>CNPJ Ativo</p>
-            <p>Inscrições Estaduais em diversos estados</p>
-            <p>Operação nacional</p>
-        </div>
-
+        <p class="sec-note">O coração desta publicação: pessoas dedicadas que fazem a informação chegar até você com qualidade.</p>
+      </div>
+      <div class="equipe-grid">
+        <article class="team-card" data-reveal data-testid="team-redacao">
+          <p class="team-num">EQUIPE 01</p>
+          <h3>Equipe de Redação</h3>
+          <p>Textos impecáveis, claros e cuidadosamente revisados. Nossa redação transforma temas técnicos em leitura leve e prazerosa.</p>
+          <ul>
+            <li>Escrita cuidadosa e revisada</li>
+            <li>Compromisso com a clareza</li>
+          </ul>
+        </article>
+        <article class="team-card" data-reveal data-testid="team-pesquisa">
+          <p class="team-num">EQUIPE 02</p>
+          <h3>Equipe de Pesquisa</h3>
+          <p>Checagem rigorosa em cada publicação. Nossos pesquisadores conferem fontes oficiais antes de qualquer conteúdo ir ao ar.</p>
+          <ul>
+            <li>Rigor e precisão em cada dado</li>
+            <li>Trabalho sério e consistente</li>
+          </ul>
+        </article>
+        <article class="team-card" data-reveal data-testid="team-atendimento">
+          <p class="team-num">EQUIPE 03</p>
+          <h3>Equipe de Atendimento</h3>
+          <p>Respostas atenciosas e rápidas a cada leitor. Um time cordial que trata cada mensagem com atenção e respeito.</p>
+          <ul>
+            <li>Atendimento cordial e humano</li>
+            <li>Dedicação exemplar ao leitor</li>
+          </ul>
+        </article>
+      </div>
+      <div class="praise-band" data-reveal data-testid="praise-band">
+        <p>“O Sklean Informa só existe graças a uma equipe que trabalha bem de verdade: criteriosa na pesquisa, caprichosa na escrita e gentil no atendimento. É esse padrão de excelência que mantém esta publicação viva.”</p>
+        <small>Nota da coordenação editorial</small>
+      </div>
     </div>
+  </section>
 
-</section>
+  <!-- TRANSPARÊNCIA -->
+  <section id="transparencia">
+    <div class="wrap">
+      <div class="sec-head" data-reveal>
+        <div>
+          <p class="sec-label">Transparência</p>
+          <h2>Quem mantém <em>esta publicação</em></h2>
+        </div>
+        <p class="sec-note">Dados cadastrais públicos do mantenedor, publicados em nome da transparência com o leitor.</p>
+      </div>
+      <div class="transp-grid">
+        <div class="transp-text" data-reveal>
+          <p>Esta é uma <b>publicação digital independente, de caráter exclusivamente informativo</b>, mantida por <b>Laboratorio Sklean do Brasil LTDA</b>, inscrita no CNPJ sob o nº <b>62.635.669/0001-07</b>. O projeto nasceu com o propósito de informar sobre cosméticos, perfumaria e higiene pessoal — nada mais.</p>
+          <p>Aqui <b>não vendemos produtos</b>, não exibimos preços, não há catálogo, checkout ou qualquer forma de pagamento. Todo o conteúdo é editorial e gratuito.</p>
+          <aside class="aviso" data-testid="aviso-transparencia">
+            <p><b>Esta publicação não é o site oficial da empresa.</b> Trata-se apenas de um projeto de caráter informativo, mantido pelo CNPJ 62.635.669/0001-07 (Laboratorio Sklean do Brasil LTDA). Não representamos o site institucional da empresa titular do CNPJ, não fabricamos nem comercializamos produtos por este canal.</p>
+            <p>Qualquer referência a categorias de produtos possui finalidade meramente educacional e ilustrativa.</p>
+            <p class="cnpj-line">Mantenedor: Laboratorio Sklean do Brasil LTDA · CNPJ 62.635.669/0001-07</p>
+          </aside>
+        </div>
+        <div class="matrix" data-reveal data-testid="transp-matrix">
+          <div class="cell wide"><label>Razão Social</label><span>Laboratorio Sklean do Brasil LTDA</span></div>
+          <div class="cell"><label>CNPJ</label><span class="mono">62.635.669/0001-07</span></div>
+          <div class="cell"><label>Situação</label><span class="ok">Ativa (desde 03/11/2005)</span></div>
+          <div class="cell"><label>Data de Abertura</label><span>29/03/1990 (36 anos)</span></div>
+          <div class="cell"><label>Tipo</label><span>Matriz</span></div>
+          <div class="cell"><label>Porte</label><span>Sem Enquadramento</span></div>
+          <div class="cell"><label>Capital Social</label><span class="mono">R$ 5.648.199,00</span></div>
+          <div class="cell"><label>Natureza Jurídica</label><span>Sociedade Empresária Limitada</span></div>
+          <div class="cell"><label>Simples / MEI</label><span>Não / Não</span></div>
+          <div class="cell wide"><label>Atividade Principal (CNAE)</label><span>20.63-1-00 — Fabricação de cosméticos, produtos de perfumaria e de higiene pessoal</span></div>
+          <div class="cell"><label>IE São Paulo</label><span class="mono">492.458.624.117</span></div>
+          <div class="cell"><label>IE Minas Gerais</label><span class="mono">003331560.01-80</span></div>
+          <div class="cell"><label>IE Paraíba</label><span class="mono">16.905.255-9</span></div>
+          <div class="cell"><label>IE Pernambuco</label><span class="mono">0532137-93</span></div>
+          <div class="cell"><label>IE Paraná</label><span class="mono">09903858-66</span></div>
+          <div class="cell"><label>IE Rio Grande do Sul</label><span class="mono">900/0040308 · 096/3921754</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section id="contato" class="contact">
-
-    <h2>Entre em Contato</h2>
-
-    <p>📧 fiscal@mahogany.com.br</p>
-
-    <p>📞 (11) 3604-2600</p>
-
-    <p>
-        Avenida Lourenço Belloli, 1010 - Anexo 1000
-        Vila Menck - Osasco/SP
-    </p>
-
-    <br>
-
-    <a href="https://www.mahogany.com.br/" class="btn">
-        Visitar Site Oficial
-    </a>
-
-</section>
+  <!-- CONTATO -->
+  <section class="contato" id="contato">
+    <div class="wrap">
+      <div class="sec-head" data-reveal>
+        <div>
+          <p class="sec-label">Contato</p>
+          <h2>Fale com <em>a publicação</em></h2>
+        </div>
+        <p class="sec-note">Canal exclusivo para assuntos editoriais. Não realizamos vendas, orçamentos ou pedidos por aqui.</p>
+      </div>
+      <div class="contato-grid">
+        <div class="panel" data-reveal data-testid="contact-email">
+          <label>E-mail</label>
+          <a class="clink" href="mailto:fiscal@mahogany.com.br" data-testid="contact-email-link">fiscal@mahogany.com.br</a>
+          <p class="hint">Sugestões de pauta, correções e dúvidas sobre o conteúdo.</p>
+        </div>
+        <div class="panel" data-reveal data-testid="contact-phone">
+          <label>Telefone</label>
+          <a class="clink" href="tel:+551136042600" data-testid="contact-phone-link">(11) 3604-2600</a>
+          <p class="hint">Atendimento em horário comercial, dias úteis.</p>
+        </div>
+        <div class="panel" data-reveal data-testid="contact-address">
+          <label>Correspondência</label>
+          <p>
+            Laboratorio Sklean do Brasil LTDA<br>
+            Avenida Lourenco Belloli, 1010 — Anexo 1000<br>
+            Vila Menck · Osasco / SP<br>
+            CEP 06268-110
+          </p>
+          <p class="hint">Endereço de correspondência do mantenedor desta publicação.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
 
 <footer>
-    © 2026 Laboratório Sklean do Brasil LTDA • Todos os direitos reservados.
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <a href="#topo" class="brand">
+        <svg viewBox="0 0 32 32" width="40" height="40" fill="none" aria-hidden="true">
+          <circle cx="16" cy="16" r="14.5" stroke="#A5854A" stroke-width="1.6"/>
+          <path d="M10 22c6 0 12-6 12-12-6 0-12 6-12 12z" stroke="#F6F1E8" stroke-width="1.8"/>
+          <path d="M12 20l8-8" stroke="#F6F1E8" stroke-width="1.3"/>
+          <circle cx="24.5" cy="24.5" r="3" fill="#A5854A"/>
+        </svg>
+        <span class="brand-name">
+          <b>SKLEAN INFORMA</b>
+          <span>Publicação independente</span>
+        </span>
+      </a>
+      <p>Publicação digital de caráter exclusivamente informativo, mantida por Laboratorio Sklean do Brasil LTDA · CNPJ 62.635.669/0001-07. Este site não é o site oficial da empresa: é apenas um projeto editorial independente. Sem vendas, sem preços, sem catálogo.</p>
+    </div>
+    <div>
+      <h4>Navegação</h4>
+      <a href="#servicos" data-testid="foot-servicos">Serviços da publicação</a>
+      <a href="#equipe" data-testid="foot-equipe">Nossa equipe</a>
+      <a href="#transparencia" data-testid="foot-transparencia">Transparência</a>
+      <a href="#contato" data-testid="foot-contato">Contato</a>
+    </div>
+    <div>
+      <h4>Transparência</h4>
+      <a href="#/privacidade" data-testid="legal-privacy-btn">Política de Privacidade</a>
+      <a href="#transparencia" data-testid="foot-mantenedor">Dados do mantenedor</a>
+    </div>
+  </div>
+  <div class="foot-legal">
+    <span>© 2026 Sklean Informa — Projeto informativo independente</span>
+    <span>Mantida por Laboratorio Sklean do Brasil LTDA · CNPJ 62.635.669/0001-07</span>
+  </div>
 </footer>
 
+<!-- PRIVACIDADE -->
+<div class="overlay" id="page-privacidade" role="dialog" aria-modal="true" aria-label="Política de Privacidade" data-testid="page-privacidade">
+  <button class="overlay-close" data-close data-testid="close-privacidade">Fechar ×</button>
+  <div class="overlay-inner">
+    <p class="sec-label">Transparência</p>
+    <h2>Política de <em>Privacidade</em></h2>
+    <p>Última atualização: outubro de 2026. Esta política descreve como o Sklean Informa — publicação informativa e independente mantida por Laboratorio Sklean do Brasil LTDA (CNPJ 62.635.669/0001-07) — trata as informações dos leitores, em conformidade com a Lei Geral de Proteção de Dados (LGPD — Lei nº 13.709/2018).</p>
+    <h5>1. Natureza desta publicação</h5>
+    <p>Este site é um projeto editorial de caráter exclusivamente informativo. Não possui loja, catálogo, checkout, cadastro de usuários nem qualquer forma de cobrança. Não é o site oficial da empresa titular do CNPJ.</p>
+    <h5>2. Dados que coletamos</h5>
+    <p>As únicas informações recebidas são aquelas enviadas voluntariamente pelo leitor ao entrar em contato por e-mail (fiscal@mahogany.com.br) ou telefone ((11) 3604-2600): nome e canal de contato.</p>
+    <h5>3. Cookies e navegação</h5>
+    <p>Podemos utilizar cookies estritamente técnicos e estatísticas de acesso anonimizadas para medir o alcance do conteúdo editorial. Nenhum dado de navegação é vendido ou compartilhado com terceiros para fins publicitários.</p>
+    <h5>4. Finalidade</h5>
+    <p>Os dados de contato recebidos são utilizados exclusivamente para responder às mensagens enviadas à equipe editorial.</p>
+    <h5>5. Seus direitos (LGPD)</h5>
+    <ul>
+      <li>Confirmação e acesso aos seus dados;</li>
+      <li>Correção de dados incompletos ou desatualizados;</li>
+      <li>Eliminação dos dados tratados com consentimento;</li>
+      <li>Revogação do consentimento a qualquer momento.</li>
+    </ul>
+    <h5>6. Encarregado de dados</h5>
+    <p>Para exercer seus direitos, escreva para fiscal@mahogany.com.br ou ligue para (11) 3604-2600. Endereço para correspondência: Avenida Lourenco Belloli, 1010 — Anexo 1000, Vila Menck, Osasco / SP — CEP 06268-110.</p>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!window.gsap || !window.Lenis){ document.documentElement.classList.add('no-js'); return; }
+  if(reduce){ document.documentElement.classList.add('no-anim'); var i=document.getElementById('intro'); if(i) i.remove(); }
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  var lenis = new Lenis({ smoothWheel:true, lerp:.09 });
+  lenis.on('scroll', ScrollTrigger.update);
+  gsap.ticker.add(function(t){ lenis.raf(t*1000); });
+  gsap.ticker.lagSmoothing(0);
+
+  document.querySelectorAll('a[href^="#"]:not([href^="#/"])').forEach(function(a){
+    a.addEventListener('click', function(e){
+      var el = document.querySelector(a.getAttribute('href'));
+      if(el){ e.preventDefault(); lenis.scrollTo(el, { offset:-70 }); }
+    });
+  });
+
+  var header = document.getElementById('header');
+  lenis.on('scroll', function(e){ header.classList.toggle('scrolled', e.scroll > 40); });
+
+  if(!reduce){
+    var tl = gsap.timeline({ defaults:{ ease:'power4.out' } });
+    tl.to('.intro-mark circle, .intro-mark path', { strokeDashoffset:0, duration:1, stagger:.15, ease:'power2.inOut' })
+      .to('.intro-tag', { opacity:1, duration:.4 }, '-=.5')
+      .to('#intro', { yPercent:-100, duration:.9, ease:'power4.inOut', delay:.35 })
+      .set('#intro', { display:'none' })
+      .to('.hl-inner', { y:0, duration:1.15, stagger:.12 }, '-=.55')
+      .from('.hero-kicker', { opacity:0, x:-24, duration:.8 }, '-=.9');
+
+    gsap.to('.hero-leaf.one', {
+      yPercent:-18, rotate:20, ease:'none',
+      scrollTrigger:{ trigger:'.hero', start:'top top', end:'bottom top', scrub:true }
+    });
+    gsap.to('.hero-leaf.two', {
+      yPercent:14, rotate:-150, ease:'none',
+      scrollTrigger:{ trigger:'.hero', start:'top top', end:'bottom top', scrub:true }
+    });
+
+    gsap.utils.toArray('[data-reveal]').forEach(function(el){
+      gsap.fromTo(el, { opacity:0, y:44 }, {
+        opacity:1, y:0, duration:1, ease:'power3.out',
+        scrollTrigger:{ trigger:el, start:'top 86%', once:true }
+      });
+    });
+  } else {
+    gsap.set('[data-reveal]', { opacity:1 });
+  }
+
+  // Router para overlay de privacidade
+  var routes = { '#/privacidade':'page-privacidade' };
+  var titles = { '#/privacidade':'Política de Privacidade — Sklean Informa' };
+  var baseTitle = document.title;
+  var openEl = null;
+
+  function route(){
+    var h = window.location.hash;
+    if(openEl){ openEl.classList.remove('open'); openEl = null; lenis.start(); document.title = baseTitle; }
+    if(routes[h]){
+      openEl = document.getElementById(routes[h]);
+      openEl.classList.add('open');
+      openEl.scrollTop = 0;
+      lenis.stop();
+      document.title = titles[h];
+    }
+  }
+  window.addEventListener('hashchange', route);
+  route();
+
+  document.querySelectorAll('[data-close]').forEach(function(btn){
+    btn.addEventListener('click', function(){ window.location.hash = ''; });
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && openEl){ window.location.hash = ''; }
+  });
+})();
+</script>
 </body>
 </html>
-```
